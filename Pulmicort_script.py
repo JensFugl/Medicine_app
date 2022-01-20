@@ -15,6 +15,7 @@ from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import pandas as pd
 
+
 ser = Service("chromedriver.exe")
 op = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=ser, options=op)
