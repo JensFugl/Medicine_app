@@ -7,6 +7,25 @@ Created on Tue Jan 18 11:03:19 2022
 # pip install webdriver-manager
 # conda install -c conda-forge selenium
 
+
+
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("enable-automation")
+options.add_argument("--disable-infobars")
+options.add_argument("--disable-dev-shm-usage")
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.google.com/")
+element_text = driver.page_source
+print(element_text)
+
+'''
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
@@ -152,7 +171,7 @@ except Exception as ex:
 
 
 
-'''
+
 data.to_sql(con=db, name='med', if_exists='append', index=False)
 
 lol = pd.read_sql_query("SELECT * FROM med", con=db)
