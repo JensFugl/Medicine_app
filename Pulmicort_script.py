@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 
-ser = Service("/usr/bin/chromedriver.exe")
+ser = Service("/usr/bin/chromedriver")
 
 
 op = webdriver.ChromeOptions()
