@@ -17,7 +17,11 @@ import pandas as pd
 
 
 ser = Service("chromedriver.exe")
+
+
 op = webdriver.ChromeOptions()
+op.add_argument("--headless")  
+
 driver = webdriver.Chrome(service=ser, options=op)
 
 url = "https://www.medicinpriser.dk/default.aspx"
@@ -90,11 +94,6 @@ list(map(to_float, to_numeric))
 df.rename(columns={'Tilskud beregnes af  (kr.)' : 'Tilskud', 
                    'Pris pr. enhed (kr.)': 'Enhedspris', 
                    'Pris pr.pakning (kr.)' : 'Pakkepris'}, inplace=True)
-
-
-import seaborn as sns
-
-sns.histplot(data = df, x = 'Enhedspris', bins =20)
 
 
 from sqlalchemy import create_engine, types
