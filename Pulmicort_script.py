@@ -41,7 +41,6 @@ driver.get(url)
 search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
 search.send_keys("Pulmicort")
 search.send_keys(Keys.RETURN)
-print(search)
 
 #select All rows
 from selenium.webdriver.support.ui import Select
@@ -49,7 +48,7 @@ select = Select(driver.find_element(By.ID, "ctl00_ctl07_Results_PagerTop_Results
 select.select_by_visible_text('Alle')
 
 table = driver.find_element(By.ID, "mainContainer")
-print(table)
+
 
 soup = BeautifulSoup(driver.page_source, 'lxml')
 # Obtain information from tag table id
@@ -116,7 +115,7 @@ from sqlalchemy.sql.sqltypes import INTEGER
 
 
 db = create_engine('mysql://jens:gj2PWWhCTw2GSH8@test-db.cu0mjlmttufo.eu-central-1.rds.amazonaws.com:3306/db_medicine_app')
-
+'''
 data = df.drop(columns = ['Lægemiddel/varenummer', 'Styrke', 'Pakning'])
 from datetime import date
 
@@ -161,7 +160,7 @@ try:
 except Exception as ex:
     print ("Something went wrong….",ex)
 
-
+'''
 
 data.to_sql(con=db, name='med', if_exists='append', index=False)
 
