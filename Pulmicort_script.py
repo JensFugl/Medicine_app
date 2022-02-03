@@ -7,12 +7,20 @@ Created on Tue Jan 18 11:03:19 2022
 # pip install webdriver-manager
 # conda install -c conda-forge selenium
 
-
-
+'''
 
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
+from bs4 import BeautifulSoup
+import pandas as pd
+'''
+
+#application.py
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--disable-gpu")
@@ -26,16 +34,8 @@ element_text = driver.page_source
 print(element_text)
 
 '''
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
 
-from bs4 import BeautifulSoup
-import pandas as pd
-
-
-ser = Service("/usr/bin/chromedriver")
+ser = Service("chromedriver.exe")
 
 
 op = webdriver.ChromeOptions()
@@ -57,7 +57,7 @@ select = Select(driver.find_element(By.ID, "ctl00_ctl07_Results_PagerTop_Results
 select.select_by_visible_text('Alle')
 
 table = driver.find_element(By.ID, "mainContainer")
-
+print(table)
 
 soup = BeautifulSoup(driver.page_source, 'lxml')
 # Obtain information from tag table id
@@ -166,7 +166,6 @@ try:
     print ("Email sent successfully!")
 except Exception as ex:
     print ("Something went wrong….",ex)
-
 
 
 
