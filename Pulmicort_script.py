@@ -33,9 +33,9 @@ driver = webdriver.Chrome(options=options)
 url = "https://www.medicinpriser.dk/default.aspx"
 driver.get(url)
 
-element_text = driver.page_source
-#element = driver.execute_script("return document.documentElement.outerHTML")
-print(element_text)
+#element_text = driver.page_source
+element = driver.execute_script("return document.documentElement.outerHTML")
+print(element)
 
 #select search box
 #search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
