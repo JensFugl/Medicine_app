@@ -10,7 +10,7 @@ Created on Tue Jan 18 11:03:19 2022
 
 from selenium import webdriver
 #from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.keys import Keys
+#from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 #from bs4 import BeautifulSoup
@@ -21,11 +21,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 options = Options()
 options.add_argument("--headless")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
-options.add_argument("enable-automation")
-options.add_argument("--disable-infobars")
-options.add_argument("--disable-dev-shm-usage")
+#options.add_argument("--disable-gpu")
+#options.add_argument("--no-sandbox")
+#options.add_argument("enable-automation")
+#options.add_argument("--disable-infobars")
+#options.add_argument("--disable-dev-shm-usage")
 driver = webdriver.Chrome(options=options)
 
 url = "https://www.medicinpriser.dk/default.aspx"
@@ -33,8 +33,8 @@ driver.get(url)
 
 #select search box
 search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
-search.send_keys("Pulmicort")
-search.send_keys(Keys.RETURN)
+#search.send_keys("Pulmicort")
+#search.send_keys(Keys.RETURN)
 print(search)
 '''
 #select All rows
