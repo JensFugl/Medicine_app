@@ -30,12 +30,15 @@ driver = webdriver.Chrome(options=options)
 
 url = "https://www.medicinpriser.dk/default.aspx"
 driver.get(url)
+import time
+time.sleep(5)
+
 element_text = driver.page_source
 element = driver.execute_script("return document.documentElement.outerHTML")
 print(element)
 
 #select search box
-search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
+#search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
 #search.send_keys("Pulmicort")
 #search.send_keys(Keys.RETURN)
 '''
