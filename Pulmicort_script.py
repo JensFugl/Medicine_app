@@ -11,7 +11,7 @@ Created on Tue Jan 18 11:03:19 2022
 from selenium import webdriver
 #from selenium.webdriver.chrome.service import Service
 #from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
+#from selenium.webdriver.common.by import By
 
 #from bs4 import BeautifulSoup
 #import pandas as pd
