@@ -27,7 +27,7 @@ options.add_argument("enable-automation")
 options.add_argument("--disable-infobars")
 options.add_argument("--disable-dev-shm-usage")
 
-options.add_argument("user-agent=foo")
+#options.add_argument("user-agent=foo")
 driver = webdriver.Chrome(options=options)
 
 url = "https://www.medicinpriser.dk/default.aspx"
