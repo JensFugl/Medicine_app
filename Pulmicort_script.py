@@ -13,8 +13,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-#from bs4 import BeautifulSoup
-#import pandas as pd
+from bs4 import BeautifulSoup
+import pandas as pd
 
 
 #application.py
@@ -42,7 +42,7 @@ search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
 search.send_keys("Pulmicort")
 search.send_keys(Keys.RETURN)
 print(search)
-'''
+
 #select All rows
 from selenium.webdriver.support.ui import Select
 select = Select(driver.find_element(By.ID, "ctl00_ctl07_Results_PagerTop_ResultsCountList"))
@@ -107,6 +107,8 @@ df.rename(columns={'Tilskud beregnes af  (kr.)' : 'Tilskud',
                    'Pris pr.pakning (kr.)' : 'Pakkepris'}, inplace=True)
 
 
+print(df)
+'''
 from sqlalchemy import create_engine, types
 import sqlalchemy
 import pandas as pd
@@ -158,8 +160,6 @@ try:
     print ("Email sent successfully!")
 except Exception as ex:
     print ("Something went wrong….",ex)
-
-
 
 
 
