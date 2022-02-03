@@ -11,7 +11,7 @@ Created on Tue Jan 18 11:03:19 2022
 from selenium import webdriver
 #from selenium.webdriver.chrome.service import Service
 #from selenium.webdriver.common.keys import Keys
-#from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import By
 
 #from bs4 import BeautifulSoup
 #import pandas as pd
@@ -35,7 +35,7 @@ element = driver.execute_script("return document.documentElement.outerHTML")
 print(element)
 
 #select search box
-#search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
+search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
 #search.send_keys("Pulmicort")
 #search.send_keys(Keys.RETURN)
 '''
