@@ -26,16 +26,16 @@ options.add_argument("--no-sandbox")
 options.add_argument("enable-automation")
 options.add_argument("--disable-infobars")
 options.add_argument("--disable-dev-shm-usage")
+
+options.add_argument("user-agent=foo")
 driver = webdriver.Chrome(options=options)
 
 url = "https://www.medicinpriser.dk/default.aspx"
 driver.get(url)
-import time
-time.sleep(5)
 
 element_text = driver.page_source
-element = driver.execute_script("return document.documentElement.outerHTML")
-print(element)
+#element = driver.execute_script("return document.documentElement.outerHTML")
+print(element_text)
 
 #select search box
 #search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
