@@ -10,7 +10,7 @@ Created on Tue Jan 18 11:03:19 2022
 
 from selenium import webdriver
 #from selenium.webdriver.chrome.service import Service
-#from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 #from bs4 import BeautifulSoup
@@ -27,21 +27,21 @@ options.add_argument("enable-automation")
 options.add_argument("--disable-infobars")
 options.add_argument("--disable-dev-shm-usage")
 
-#options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/97.0.4692.99 Safari/537.36")
 driver = webdriver.Chrome(options=options)
 
 url = "https://www.medicinpriser.dk/default.aspx"
 driver.get(url)
 
-element_text = driver.page_source
+#element_text = driver.page_source
 #element = driver.execute_script("return document.documentElement.outerHTML")
 #user_agent = driver.execute_script("return navigator.userAgent;")
-print(element_text)
+#print(element_text)
 #print(user_agent)
 #select search box
-#search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
-#search.send_keys("Pulmicort")
-#search.send_keys(Keys.RETURN)
+search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
+search.send_keys("Pulmicort")
+search.send_keys(Keys.RETURN)
+print(search)
 '''
 #select All rows
 from selenium.webdriver.support.ui import Select
