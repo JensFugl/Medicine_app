@@ -30,12 +30,13 @@ driver = webdriver.Chrome(options=options)
 
 url = "https://www.medicinpriser.dk/default.aspx"
 driver.get(url)
+element_text = driver.page_source
+print(element_text)
 
 #select search box
-search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
+#search = driver.find_element(By.ID,"ctl00_ctl07_simpleForm_LaegemiddelBox")
 #search.send_keys("Pulmicort")
 #search.send_keys(Keys.RETURN)
-print(search)
 '''
 #select All rows
 from selenium.webdriver.support.ui import Select
