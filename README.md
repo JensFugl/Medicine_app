@@ -3,8 +3,7 @@ App for keeping patients up to date with medicine prices
 
 In DK the price of medicine you buy at the pharmacy change every 14 days. The reason is that the state wants medicine companys to compete as much as possible on the price.
 
-While this is a good thing it also results in patients from time to time ending up in the situation where they need to buy medicine 
-- but when standing at the pharmacy the price i suddenly higher than expected.
+While this is a good thing it also results in patients from time to time ending up in the situation where they need to buy medicine, but when standing at the pharmacy the price i suddenly higher than expected.
 
 While medicine prices are publicly available and are updated every 14 days as the price changes - patients will rarely spend time keeping track of the price.
 
