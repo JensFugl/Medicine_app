@@ -13,12 +13,16 @@ plt.close('all')
 
 bd = pd.read_pickle("bd.pkl")
 
-fig, ax = plt.subplots()
-bd['Aktivt_stof'].hist()
-bd['Styrke'].hist(bins = 500)
 bd['Price_pr_mg'] = bd['Price']/bd['Aktivt_stof']
 
 bd = bd[bd['Price_pr_mg']>0.002] 
+
+
+'''
+fig, ax = plt.subplots()
+bd['Aktivt_stof'].hist()
+bd['Styrke'].hist(bins = 500)
+
 
 fig1, ax = plt.subplots()
 sns.scatterplot(data=bd, x= 'Date', y='Price_pr_mg')
@@ -29,14 +33,14 @@ sns.lineplot(data=bd, x= 'Date', y='Price_pr_mg', estimator = "min")
 
 fig1, ax = plt.subplots()
 sns.lineplot(data=bd['Price_pr_mg'])
-
+'''
 
 
 
 user = {"Medicine_left" : 0, "Daily_use" : 800, "Days_left": 0, "Money_spent" : 0, "Date" : 0 }
 
 everyday = pd.date_range('2016-11-21', '2022-01-10', freq='D')
-lol = pd.date_range('2016-11-21', '2022-01-10', freq='14D')
+#lol = pd.date_range('2016-11-21', '2022-01-10', freq='14D')
 
 a = pd.DataFrame(everyday, columns = ['Date'])
 b = bd[bd['Price_pr_mg'].isin(bd.groupby('Date').min()['Price_pr_mg'])]
@@ -50,7 +54,7 @@ def buyEvent(df, user, date):
     user['Medicine_left'] = user['Medicine_left'] + buy.iloc[0]['Aktivt_stof']
     user['Days_left'] = user['Medicine_left']/user['Daily_use']
     user['Money_spent'] = user['Money_spent'] + buy.iloc[0]['Price']
-    print(user)
+    #print(user)
     return user
 
 log = []
@@ -66,6 +70,8 @@ def runSimulation(df, user, dates):
         else:
             pass  
     return log
+
+
 
 log = runSimulation(b, user, everyday)
 frame = pd.DataFrame(log, columns = ["Medicine_left", "Daily_use" , "Days_left", "Money_spent", "Dates"])
